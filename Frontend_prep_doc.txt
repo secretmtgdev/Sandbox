@@ -1,0 +1,151 @@
+JavaScript challenges:
+- Implement Promise.all
+- Implement a function which extends Array.prototype
+- Implement a dropdown component
+- Implment a 180deg rotation algorihtm for an image with 1s animation
+- Implement the .get method of the lodash library
+- Create an interval
+- Implement Array.prototype.flat()
+- Implement a Search Bar
+- Implment a Modal
+- Implement Debounce
+- Implement a throttle promise
+- Create a simple store for a DOM element
+- Create an event emitter
+
+Web questions:
+- What are the differences between Cookies, localStorage, and sessionStorage?
+    - Session storage
+        - Information is stored during the duration of hte browser session (deleted on tab close)
+        - In case a user leaves the site, we want to expire session information to avoid resources taken by abandoned session 
+    - Local storage
+        - Can be cleared by the user, don't rely on getting data
+    - Cookies
+        - Sent to server in request, can be used for authentication for a page
+        - Store token information
+        - Can be used against XSS with HTTP only flag, cookies are secure from JavaScript
+- What are React hooks and how do they differ from class-based component life cycles?
+- Which react hooks do you use? useEffect, useState
+    - useEffect
+        - What is this?
+        - What does the dependency array do?
+        - Why does useEffect only execute once on an empty array?
+        - What does adding an object in the dependency array do?
+        - What happens if a ref is passed to the dependency array?
+        - What is useLayoutEffect?
+    - useState
+    - useContext
+    - useMemo
+        - What is this?
+        - When should this be used?
+    - useCallback
+- What is HTTP caching and how does it work?
+- What are the eTag and Last Modified and which is preferred?
+    - eTag: Specific version identifier, verifies content change, great with frequent modifications
+    - Last Modified: Latest verison
+- What is the response body of a 304 (not modified)?
+    - There is no body, it's just headers
+- What is the Event Loop in JavaScript and how does it handle async operations?
+    - What are micro and macro tasks?
+- What are the differences between a Map object and regular object in JavaScript?
+- What are some interesting trends in JavaScript? (how do you stay up to date?)
+- What are the latest features of React 18?
+- What is React Fibre and how does it improve rendering performance?
+- What is HTTP?
+- How does HTTP work?
+- What is HTTP/2?
+- What does the request-response cycle look like?
+- Tell me about status codes:
+    - 200 Ok
+        - Request has succeeded
+        - Result is in response body
+    - 201 Created
+        - Resource was created (POST)
+    - 202 Accepted
+        - Resource is accepted for processing
+        - Processing is not complete
+    - 204 No content
+        - Request succeded but there is no response body (DELETE)
+    - 301 Permanently moved
+        - Resource is at a different location than requested
+        - Client should use new URL
+    - 302 Found
+        - Resource is temporarily moved
+        - Client should continue to use old URL
+    - 304 Not modified
+        - Resource has not been modified since last request, use CACHED resource
+    - 400 Bad Request
+        - Server couldn't understand the request
+    - 401 Unauthorized
+        - Request requires user authentication
+    - 403 Forbidden
+        - Insufficient permissions in the request
+    - 404 Not found
+        - Requested resource is not on the server, URL could be incorrect
+    - 405 Method not allowed
+        - Specific action is not supported, POST on read-only resource
+    - 408 Request timeout
+        - Server timed out while waiting for the request
+    - 500 Internal server error
+        - Server encounted an unexpected condition that prevented a fulfillment of the request
+        - Generic
+    - 501 Not implmented
+        - Server doesn't have the functionality to complete the request
+    - 502 Bad Gateway
+        - One server (proxy/gateway) got an invalid response from another server (upstream [data comes from other server])
+        - Client <-> API Gateway (server) <-> Server with data (upstream) <-> DB fleet
+    - 503 Service unavailable
+        - Server is unable to handle request due to overload, throttling, or maintentance
+    - 504 Gateway timeout
+        - Downstream server didn't get a response from upstream server
+        - Upstream server or DB could be down and timing out
+- What are the five common HTTP methods?
+    - GET: requests a representation of a specified source
+    - POST: submits entity to specified source
+    - PUT: replace all representation of entity in specified source
+    - DELETE: deletes a specified resource
+    - PATCH: applies partial modifications to a resource
+- What is CSRF?
+- What methods are used to prevent CSRF?
+- How do you improve browser performance?
+    - Use CDNs
+    - Remove render-blocking resources
+    - Optimize images: Remove metadata (compression)
+        - Use srcset to give a list of images for browser to choose
+            - <img_url> <viewport_width>
+    - Lazy loading
+        - Splits JavaScript, CSS, and HTML into smaller chunks
+            - Set JavaScript to module, deferred by default <script type="module">
+            - Deferring tells the browser to treat source as non-blocking
+            - CSS is render blocking
+            - Fonts can be preloaded (typically wait until everything is done) with <link rel="preload">
+            - Lazy load images (defer loading while they are off screen) <img loading="lazy" />
+
+    - Minimize files
+    - Cache results
+    - Use SSR: preloads the HTML data (good for heavy text-based pages)
+- What is Server Side Rendering (SSR)?
+    - Server builds entire HTML document and gives to the browser to render
+    - Speeds up performance by reducing multiple requests from client to DB
+
+
+DSA questions:
+- Merge two sorted arrays, remove duplicates
+- Given a list of points, find four that form a square
+- Check for balanced brackets in a string
+- Given two nodes, return the overlapping section
+- Find the number of islands
+- Write a function to determine if a string is a palindrome
+- Write a function to reverse a linked list
+- Solve 3Sum
+- Implement a queue using two stacks
+- Find the longest substring with unique characters
+- Uncompress a string
+- Color sort
+- String partition
+- Letter combinations of a phone number
+- Regex parser
+- Bipartite graph
+
+System design:
+- Design a Typeadhead system
